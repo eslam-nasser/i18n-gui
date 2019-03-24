@@ -1,0 +1,20 @@
+.btn
+    text-align: center
+    text-decoration: none
+    display: inline-block
+    border-radius: 5px
+    background-color: #ddd
+    transition: .15s
+    padding: 15px 20px
+    border: 0
+    outline: 0
+    &:hover
+        background-color: transparentize(#ddd, .95)
+        cursor: pointer
+    &.primary
+        color: #ffffff
+        background-color: $accentColor
+        &:hover
+            background-color: transparentize($accentColor, .1)
+            cursor: pointer
+    
