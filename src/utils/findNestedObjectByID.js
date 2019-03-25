@@ -2,7 +2,7 @@ function findNestedObjectByID(theObject, key, value) {
     var result = null;
     if (theObject instanceof Array) {
         for (var i = 0; i < theObject.length; i++) {
-            result = findNestedObjectByID(theObject[i]);
+            result = findNestedObjectByID(theObject[i], key, value);
             if (result) {
                 break;
             }
@@ -10,7 +10,7 @@ function findNestedObjectByID(theObject, key, value) {
     } else {
         for (var prop in theObject) {
             if (prop === key) {
-                if (theObject[prop] === value) {
+                if (theObject[prop] === +value) {
                     return theObject;
                 }
             }
@@ -18,7 +18,7 @@ function findNestedObjectByID(theObject, key, value) {
                 theObject[prop] instanceof Object ||
                 theObject[prop] instanceof Array
             ) {
-                result = findNestedObjectByID(theObject[prop]);
+                result = findNestedObjectByID(theObject[prop], key, value);
                 if (result) {
                     break;
                 }

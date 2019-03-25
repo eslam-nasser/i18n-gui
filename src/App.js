@@ -9,7 +9,9 @@ import readSingleFile from './utils/readSingleFile';
 class App extends Component {
     state = {
         data: null,
-        dataLoaded: false
+        dataLoaded: false,
+        default_language: 'en',
+        selected_languages: ['ar', 'fr']
     };
 
     componentWillMount() {
@@ -24,9 +26,21 @@ class App extends Component {
 
     handleDrop = file => {
         readSingleFile(file, data => {
+            // adding ids
             data = recursivelyAddIds(data);
-            localStorage.setItem('latest_i18n_gui_file', JSON.stringify(data));
-            this.setState({ dataLoaded: true, data });
+            // creating a version of the file for each language
+            const duplicated_data = {
+                default_language: data
+            };
+            this.state.selected_languages.forEach(lang => {
+                duplicated_data[lang] = JSON.parse(JSON.stringify(data));
+            });
+            // save the data to localStorage and state
+            localStorage.setItem(
+                'latest_i18n_gui_file',
+                JSON.stringify(duplicated_data)
+            );
+            this.setState({ dataLoaded: true, duplicated_data });
         });
     };
 
@@ -39,7 +53,15 @@ class App extends Component {
                     <DropdownArea handleDrop={this.handleDrop} />
                 )}
 
-                {this.state.data && <Editor data={this.state.data} />}
+                {this.state.data && (
+                    <Editor
+                        data={this.state.data}
+                        languages={[
+                            ...this.state.selected_languages,
+                            this.state.default_language
+                        ]}
+                    />
+                )}
             </div>
         );
     }

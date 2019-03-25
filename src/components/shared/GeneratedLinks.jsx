@@ -54,7 +54,8 @@ export class GeneratedLinks extends Component {
             if (e.target.parentNode && e.target.parentNode.parentNode) {
                 const parentUL = e.target.parentNode.parentNode;
                 const id = parentUL.getAttribute('data-item-id');
-                console.log(id);
+                const key_name = e.target.innerText;
+                this.props.passItemToEdit(id, key_name);
             }
         }
     };

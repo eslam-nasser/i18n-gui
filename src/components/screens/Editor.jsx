@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import GeneratedLinks from '../shared/GeneratedLinks';
 import EditItem from '../shared/EditItem';
+import findNestedObjectByID from '../../utils/findNestedObjectByID';
 
 const EditorWrapper = styled.div`
     display: flex;
@@ -16,8 +17,29 @@ const EditorWrapper = styled.div`
 export class Editor extends Component {
     html = '';
 
+    state = {
+        editItem: null
+    };
+
     componentWillMount() {
-        this.generateHtml(this.props.data);
+        this.generateHtml(this.props.data.default_language);
+    }
+
+    passItemToEdit(id, key_name) {
+        const query = findNestedObjectByID(
+            this.props.data.default_language,
+            'id',
+            id
+        );
+        // TODO
+        // console.log(key_name);
+        // console.log(query);
+        this.setState({
+            editItem: {
+                name: key_name,
+                item: query
+            }
+        });
     }
 
     generateHtml(data) {
@@ -45,8 +67,14 @@ export class Editor extends Component {
     render() {
         return (
             <EditorWrapper>
-                <GeneratedLinks html={this.html} />
-                <EditItem />
+                <GeneratedLinks
+                    passItemToEdit={this.passItemToEdit.bind(this)}
+                    html={this.html}
+                />
+                <EditItem
+                    item={this.state.editItem}
+                    languages={this.props.languages}
+                />
             </EditorWrapper>
         );
     }
