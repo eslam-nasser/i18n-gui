@@ -1,0 +1,337 @@
+{
+    "navigation": {
+        "solution": "Solution",
+        "developer": "Developer",
+        "pricing": "Pricing",
+        "contact_us": "Contact Us",
+        "login": "login",
+        "create_test_account": "Create Test Account"
+    },
+    "developer_form": {
+        "title": "Log in to your account",
+        "email": "Email",
+        "password": "Password",
+        "remember_me": "Remember Me",
+        "login": "Log In",
+        "forgot_password": "Forgot your password?"
+    },
+    "create_account_form": {
+        "title": "Sign up for a test account",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Eamil",
+        "company": "Company",
+        "website": "Website",
+        "phone": "Phone",
+        "current_month_revnue": "Current Month Revenue",
+        "options": {
+            "op1": "50,000 or less",
+            "op2": "50,000 - 150,000",
+            "op3": "150,000 - 300,000",
+            "op4": "300,000 or more"
+        },
+        "submit": "Request Test Account"
+    },
+    "contact_sales_form": {},
+    "sec1": {
+        "main_heading": "Money is always \n changing...",
+        "title": "We're here to help\nyou change with it.",
+        "copy": "Business isn't easy, and to succeed, you need to focus on keeping ahead of customer demand. We effortlessly handle the ever-changing ways they want to pay so money keeps flowing through your business.",
+        "footer_copy": "Because our job is keeping you in front of your customers.",
+        "primary_action": "Create Test Account",
+        "secondary_acton": "Contact Sales"
+    },
+    "sec2": {
+        "card1": {
+            "title": "Onboard Instantly",
+            "body": "Business moves fast, and so do we. No wait, no arrogrance, no excuses."
+        },
+        "card2": {
+            "title": "Integrate effortlessly",
+            "body": "Offer your customers’ chosen payment provider for a seamless shopping experience."
+        },
+        "card3": {
+            "title": "Take Payments",
+            "body": "Globally, reliably, inexpensively. Let your money flow and your sales grow."
+        }
+    },
+    "sec3": {
+        "main_heading": "Payment Methods",
+        "copy": "We’ve created an innovative, flexible payment platform that keeps you ahead of the changing ways customers want to pay. Ceevo makes it easy to accept almost any type of payment – leaving you to focus on your business."
+    },
+    "sec4": {
+        "main_heading": "Features",
+        "copy": "We're a fintech company with our feet on the ground. Our features are sophisticated yet simply designed to help your business fly, keeping you right whee you should be - out in front.",
+        "card1": {
+            "title": "Open-source Plugins",
+            "copy": "Integrate in minutes with our plugins or payment pop-up."
+        },
+        "card2": {
+            "title": "3-D Secure",
+            "copy": "Increased card transaction security with 3-D Secure support."
+        },
+        "card3": {
+            "title": "Dynamic Descripto",
+            "copy": "Choose how transactions appear on customer statements."
+        },
+        "card4": {
+            "title": "Multi-currency",
+            "copy": "Bill your customers in their own currencies"
+        },
+        "card5": {
+            "title": "Card Tokenisation",
+            "copy": "Securely store customer card details for later use"
+        },
+        "card6": {
+            "title": "Recurring Payments",
+            "copy": "Keep customers coming back with recurring payments."
+        },
+        "card7": {
+            "title": "Settlement Currencies",
+            "copy": "Receive funds in one of 14 settlement currencies."
+        },
+        "card8": {
+            "title": "Weekly Payouts",
+            "copy": "Processed weekly to your settlement account."
+        },
+        "card9": {
+            "title": "Multilingual Support",
+            "copy": "Payment page supports all 24 official EU languages"
+        },
+        "card10": {
+            "title": "Compliance",
+            "copy": "PCI, DSS and PSD2 taken care of for you."
+        },
+        "card11": {
+            "title": "Fraud & Risk Management",
+            "copy": "Protecting your business from fraudulent transactions."
+        },
+        "card12": {
+            "title": "Security",
+            "copy": "Advanced security to protect you and your customers."
+        }
+    },
+
+    "sec5": {
+        "main_heading": "Integrations",
+        "copy": "Keeping ahead doesn’t stop at payments. Ceevo is committed to making your whole business run smoother – which is why we integrate with today's and tomorrow's software.",
+        "tab1": {
+            "title": "Plugins",
+            "card1": {
+                "title": "WooCommerce",
+                "copy": "Popular, customisable open source e-commerce platform for WordPress."
+            },
+            "card2": {
+                "title": "Magento",
+                "copy": "Open source, e-commerce solution for developers and small businesses."
+            },
+            "card3": {
+                "title": "Prestashop",
+                "copy": "Flexible, light, and fast open source e-commerce solution."
+            },
+            "card4": {
+                "title": "Opencart",
+                "copy": "Open source, PHP-based online e-commerce solution"
+            },
+            "card5": {
+                "title": "Shopware",
+                "copy": "Flexible, customisable, and simple e-commerce solution made in Germany"
+            },
+            "card6": {
+                "title": "XT:Commerce",
+                "copy": "Professional e-commerce platform for B2B or B2C online businesses."
+            }
+        },
+        "tab2": {
+            "title": "Documentation"
+        }
+    },
+
+    "sec6": {
+        "title": "Dashboard",
+        "copy": "Everything you need right in front of you, customisable, and displayed graphically so at a glance you can spot trends and opportunities.",
+        "call_to_action": "Create Test Account"
+    },
+    "sec7": {
+        "title": "Our Pricing",
+        "copy": " setup costs, no hidden fees. Ceevo charges a minimum fee of X, and the most\nyou’ll be charged for any transaction is just X",
+        "card1": {
+            "heading": "PAY AS YOU GO",
+            "title": "1% per transaction",
+            "copy": "in 20p, capped at £2\n\nStart taking payments today.\nWe don't tie you into contracts and only charge for successful transactions.",
+            "action": "Create Test Account",
+            "limits": "Min 20p, capped at £2"
+        },
+        "card2": {
+            "heading": "ENTERPRISE",
+            "title": "Volume Based Pricing",
+            "copy": "Run your business at scale with Ceevo.\n\nWe're here to partner with you,\nwherever that takes us together,\nwe'll make the journey a little easier,\nand maybe a bit more f",
+            "action": "Contact Sales",
+            "limits": "Run your business at scale with Ceevo."
+        }
+    },
+    "footer": {
+        "block1": {
+            "copy": "Seen 'CEEVO LTD' on your bank statement?",
+            "link": "Learn More"
+        },
+        "block2": {
+            "heading": "Solutions",
+            "links": {
+                "sign-up": "Sign Up",
+                "integrate": "Integrate",
+                "accept-payment": "Accept Payment"
+            }
+        },
+        "block3": {
+            "heading": "Help & Resources",
+            "links": {
+                "support": "Support",
+                "contact-us": "Contact Us",
+                "resources": "Resources",
+                "sitemap": "Sitemap"
+            }
+        },
+        "block4": {
+            "heading": "Company",
+            "links": {
+                "about-us": "About Us",
+                "pricing": "Pricing",
+                "developer": "Developer",
+                "blog": "Blog"
+            }
+        }
+    },
+    "pricing": {
+        "pricingCards": {
+            "tags": {
+                "achDebit": "ACH Debits"
+            },
+            "card1": {
+                "title": "Credit & debit cards",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30"
+            },
+            "card2": {
+                "title": "International Cards",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30"
+            },
+            "card3": {
+                "title": "Cryptocurrency",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30",
+                "priceCopy": "See pricing for other\npayment method"
+            },
+            "card4": {
+                "title": "More payment methods",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30",
+                "priceCopy": "See pricing for other\npayment method"
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "sub-title": "Not seeing your question here?",
+            "button": "Send us an email"
+        },
+        "accordion": {
+            "tab1": {
+                "title": "Are there any setup and/or monthly fees?",
+                "content": "No. We don’t have any additional monthly, set-up, integration, or account closure fees. We do however have a monthly minimum invoice of X per month, depending on transactional volume and region(s) of operation"
+            },
+            "tab2": {
+                "title": "Do you offer multi-currency support for transactions?",
+                "content": "Yes. We can support payment in any currency supported by MasterCard/Visa, and settlement in one of 14 currencies."
+            },
+            "tab3": {
+                "title": "Is it possible to link multiple bank accounts?",
+                "content": "Yes. We are able to support the linking of multiple bank accounts."
+            },
+            "tab4": {
+                "title": "Can I integrate with my existing e-commerce platform?",
+                "content": "Yes. We have a number of eCommerce integrations available - these are Magento, Opencart, Prestashop, Shopware, WooCommerce and XT:Commerce.\nWe also offer a payment widget, making integration easy even without an eCommerce website.\nWe plan to add integrations in the future, both for eCommerce platforms, as well as those for accounting, subscription billing, and other similar solutions."
+            },
+            "tab5": {
+                "title": "Can I display my own branding throughout the payment process?",
+                "content": "Yes. Our payments widget, eCommerce integrations and direct integration options can be fully customised to reflect the look and feel of your brand."
+            },
+            "tab6": {
+                "title": "Are there additional fees that I should be aware of?",
+                "content": "In cases of customer disputes, you may incur additional fees for chargebacks. These are charged at a rate of X for each occurrence."
+            },
+            "tab7": {
+                "title": "Will I be charged for failed transactions?",
+                "content": "No. We will only ever charge you for successful transactions."
+            },
+            "tab8": {
+                "title": "What if I have to refund a customer?",
+                "content": "For full refunds, all processing fees - with the exception of the per transaction fee – are returned. For partial refunds, these fees are returned on a prorated amount basis. We do not charge any additional fees for processing a refund."
+            },
+            "tab9": {
+                "title": "Do you offer volume-based pricing?",
+                "content": "Yes, we can offer volume-based pricing to larger merchants processing in excess of X per month. To find out more, please contact our sales team."
+            }
+        }
+    },
+    "statement": {
+        "main-header": {
+            "section1": "Seen CEEVO on your ",
+            "section2": "bank statement?"
+        },
+        "statement-wedgit": {
+            "title": "If you’ve seen GOCARDLESS LTD appear on \n your bank statement and you’re not sure what the payment relates to, use our secure tool below to find out who you’re paying and what for.",
+            "input1": "How much was the payment?",
+            "input2": "When was the payment taken?",
+            "input3": "Last 4 digits of your account number",
+            "input4": "Please provide your sort code",
+            "action": "Find this payment"
+        },
+        "call-to-action-title": "Find out more about paying through GoCardless",
+        "call-to-action": "Visit support centre"
+    },
+    "sec8": {
+        "title": "Ready To Get In Front?",
+        "main_action": "Create Test Account",
+        "secondary_acton": "Contact Sales"
+    },
+    "aboutUs": {
+        "sec1": {
+            "main_heading": "We believe in making business simpler, faster and safer.",
+            "subHeading": "Ceevo is a global payment services provider that empowers businesses to accept almost any type of payment from anywhere in the world."
+        },
+        "sec2": {
+            "main_heading": "Client Testimonial"
+        },
+        "sec3": {
+            "main_heading": "Company Milestones"
+        },
+        "sec4": {
+            "main_heading": "Get the newsletter from CEEVO",
+            "subHeading": "Receive news, announcement and reports",
+            "placeholder": "Your Email"
+        }
+    },
+    "terms-and-conditions": {
+        "main-header": "Terms and conditions",
+        "copy": "Effective from: December 5, 2017. To download and print this document please click ",
+        "copy-call-to-action": "here.",
+        "sections": {
+            "sec1": {
+                "heading": "Item name"
+            }
+        }
+    },
+    "forgetPasswordForm": {
+        "title": "Forget password",
+        "placeholder": "Your Email",
+        "login": "Back to Login",
+        "button": "Reset password"
+    },
+    "resetPasswordForm": {
+        "title": "Reset your password",
+        "newPassword-placeholder": "New password",
+        "confirmPassword-placeholder": "Confirm password",
+        "button": "Save new password"
+    }
+}

@@ -74,12 +74,31 @@ class App extends Component {
         e.stopPropagation();
         this.setState({ drag: false });
         if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-            // this.props.handleDrop(e.dataTransfer.files);
-            console.log('files', e.dataTransfer.files);
+            const file = e.dataTransfer.files[0];
+            if (file.type === 'application/json') {
+                // console.log({ file });
+                this.readSingleFile(file);
+            } else {
+                // invalid file
+            }
             e.dataTransfer.clearData();
             this.dragCounter = 0;
         }
     };
+
+    readSingleFile(file) {
+        // var file = e.target.files[0];
+        // if (!file) {
+        //     return;
+        // }
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var contents = e.target.result;
+            var data = JSON.parse(contents);
+            console.log(data);
+        };
+        reader.readAsText(file);
+    }
 
     render() {
         return (
