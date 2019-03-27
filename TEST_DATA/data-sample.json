@@ -1,0 +1,139 @@
+{
+    "navbar": {
+        "link_1_text": "Solution",
+        "link_2_text": "Developer",
+        "link_3_text": "Pricing",
+        "link_4_text": "Contact Us",
+        "link_5_text": "login",
+        "link_6_text": "Create Test Account"
+    },
+
+    "home_page": {
+        "hero": {
+            "main_heading": "Money is always \n changing...",
+            "title": "We're here to help\nyou change with it.",
+            "body": "Business isn't easy, and to succeed, you need to focus on keeping ahead of customer demand. We effortlessly handle the ever-changing ways they want to pay so money keeps flowing through your business.",
+            "secondary_acton": "Contact Sales"
+        },
+        "features": {
+            "feature_1": {
+                "title": "lorem title",
+                "body": "lorem body"
+            },
+            "feature_2": {
+                "title": "lorem title",
+                "body": "lorem body"
+            },
+            "feature_3": {
+                "title": "lorem title",
+                "body": "lorem body"
+            }
+        }
+    },
+
+    "pricing_page": {
+        "pricingCards": {
+            "tags": {
+                "achDebit": "ACH Debits"
+            },
+            "card1": {
+                "title": "Credit & debit cards",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30"
+            },
+            "card2": {
+                "title": "International Cards",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30"
+            },
+            "card3": {
+                "title": "Cryptocurrency",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30",
+                "priceCopy": "See pricing for other\npayment method"
+            },
+            "card4": {
+                "title": "More payment methods",
+                "copy": "We charge a fixed fee and a percentage of the transaction each time you\naccept a credit or debit card payment. The price is the same for all cards.\nYou don’t pay anything for failed charges.",
+                "price": "2% + 30",
+                "priceCopy": "See pricing for other\npayment method"
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "sub-title": "Not seeing your question here?",
+            "button": "Send us an email"
+        },
+        "accordion": {
+            "tab1": {
+                "title": "Are there any setup and/or monthly fees?",
+                "content": "No. We don’t have any additional monthly, set-up, integration, or account closure fees. We do however have a monthly minimum invoice of X per month, depending on transactional volume and region(s) of operation"
+            },
+            "tab2": {
+                "title": "Do you offer multi-currency support for transactions?",
+                "content": "Yes. We can support payment in any currency supported by MasterCard/Visa, and settlement in one of 14 currencies."
+            },
+            "tab3": {
+                "title": "Is it possible to link multiple bank accounts?",
+                "content": "Yes. We are able to support the linking of multiple bank accounts."
+            },
+            "tab4": {
+                "title": "Can I integrate with my existing e-commerce platform?",
+                "content": "Yes. We have a number of eCommerce integrations available - these are Magento, Opencart, Prestashop, Shopware, WooCommerce and XT:Commerce.\nWe also offer a payment widget, making integration easy even without an eCommerce website.\nWe plan to add integrations in the future, both for eCommerce platforms, as well as those for accounting, subscription billing, and other similar solutions."
+            },
+            "tab5": {
+                "title": "Can I display my own branding throughout the payment process?",
+                "content": "Yes. Our payments widget, eCommerce integrations and direct integration options can be fully customised to reflect the look and feel of your brand."
+            },
+            "tab6": {
+                "title": "Are there additional fees that I should be aware of?",
+                "content": "In cases of customer disputes, you may incur additional fees for chargebacks. These are charged at a rate of X for each occurrence."
+            },
+            "tab7": {
+                "title": "Will I be charged for failed transactions?",
+                "content": "No. We will only ever charge you for successful transactions."
+            },
+            "tab8": {
+                "title": "What if I have to refund a customer?",
+                "content": "For full refunds, all processing fees - with the exception of the per transaction fee – are returned. For partial refunds, these fees are returned on a prorated amount basis. We do not charge any additional fees for processing a refund."
+            },
+            "tab9": {
+                "title": "Do you offer volume-based pricing?",
+                "content": "Yes, we can offer volume-based pricing to larger merchants processing in excess of X per month. To find out more, please contact our sales team."
+            }
+        }
+    },
+
+    "footer": {
+        "block1": {
+            "copy": "Seen 'CEEVO LTD' on your bank statement?",
+            "link": "Learn More"
+        },
+        "block2": {
+            "heading": "Solutions",
+            "links": {
+                "sign-up": "Sign Up",
+                "integrate": "Integrate",
+                "accept-payment": "Accept Payment"
+            }
+        },
+        "block3": {
+            "heading": "Help & Resources",
+            "links": {
+                "support": "Support",
+                "contact-us": "Contact Us",
+                "resources": "Resources",
+                "sitemap": "Sitemap"
+            }
+        },
+        "block4": {
+            "heading": "Company",
+            "links": {
+                "about-us": "About Us",
+                "pricing": "Pricing",
+                "developer": "Developer",
+                "blog": "Blog"
+            }
+        }
+    }
+}

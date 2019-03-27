@@ -5,6 +5,8 @@ import { Nav, DropdownArea } from './components/shared';
 import Editor from './components/screens/Editor';
 import recursivelyAddIds from './utils/recursivelyAddIds';
 import readSingleFile from './utils/readSingleFile';
+import findNestedObjectByID from './utils/findNestedObjectByID';
+import updateNestedObjectByID from './utils/updateNestedObjectByID';
 
 class App extends Component {
     state = {
@@ -44,6 +46,41 @@ class App extends Component {
         });
     };
 
+    updateItem(e) {
+        const id = e.target.getAttribute('data-group-id');
+        const key = e.target.getAttribute('data-key');
+        const lang = e.target.getAttribute('data-lang');
+        const newValue = e.target.value;
+        const query = findNestedObjectByID(this.state.data[lang], 'id', id);
+        query[key] = newValue;
+
+        // const x = updateNestedObjectByID(
+        //     this.state.data[lang],
+        //     'id',
+        //     id,
+        //     query
+        // );
+        // console.log(x);
+
+        // this.mutateObjectProperty(this.state.data[lang], 'id', id, query);
+
+        // console.log(this.state.data);
+        // console.log(this.state.data[lang]);
+        // console.log({ newValue, id, lang });
+    }
+
+    mutateObjectProperty = (obj, prop, value, newObject) => {
+        obj.constructor === Object &&
+            Object.keys(obj).forEach(key => {
+                console.log(key, prop);
+                if (key === prop) {
+                    obj[key] = value;
+                    console.log('obj[key]', obj[key]);
+                }
+                this.mutateObjectProperty(prop, value, obj[key]);
+            });
+    };
+
     render() {
         return (
             <div className="App">
@@ -60,6 +97,7 @@ class App extends Component {
                             ...this.state.selected_languages,
                             this.state.default_language
                         ]}
+                        updateItem={this.updateItem.bind(this)}
                     />
                 )}
             </div>

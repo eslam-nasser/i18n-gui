@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GeneratedLinks from '../shared/GeneratedLinks';
 import EditItem from '../shared/EditItem';
 import findNestedObjectByID from '../../utils/findNestedObjectByID';
+// import updateNestedObjectByID from '../../utils/updateNestedObjectByID';
 
 const EditorWrapper = styled.div`
     display: flex;
@@ -31,11 +32,9 @@ export class Editor extends Component {
             'id',
             id
         );
-        // TODO
-        // console.log(key_name);
-        // console.log(query);
         this.setState({
             editItem: {
+                id,
                 name: key_name,
                 item: query
             }
@@ -74,6 +73,7 @@ export class Editor extends Component {
                 <EditItem
                     item={this.state.editItem}
                     languages={this.props.languages}
+                    updateItem={this.props.updateItem}
                 />
             </EditorWrapper>
         );
