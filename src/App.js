@@ -6,11 +6,13 @@ import Editor from './components/screens/Editor';
 import recursivelyAddIds from './utils/recursivelyAddIds';
 import readSingleFile from './utils/readSingleFile';
 import findNestedObjectByID from './utils/findNestedObjectByID';
+import SelectLanguages from './components/shared/SelectLanguages';
 
 class App extends Component {
     state = {
         data: null,
-        dataLoaded: false,
+        dataLoaded: true,
+        languages_selected: false,
         // default_language: 'en',
         selected_languages: ['en', 'ar', 'fr']
     };
@@ -75,6 +77,10 @@ class App extends Component {
 
                 {!this.state.dataLoaded && (
                     <DropdownArea handleDrop={this.handleDrop} />
+                )}
+
+                {!this.state.languages_selected && this.state.dataLoaded && (
+                    <SelectLanguages />
                 )}
 
                 {this.state.data && (
