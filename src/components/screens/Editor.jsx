@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GeneratedLinks from '../shared/GeneratedLinks';
 import EditItem from '../shared/EditItem';
 import findNestedObjectByID from '../../utils/findNestedObjectByID';
+import exportToJSON from '../../utils/exportToJson';
 // import updateNestedObjectByID from '../../utils/updateNestedObjectByID';
 
 const EditorWrapper = styled.div`
@@ -23,21 +24,26 @@ export class Editor extends Component {
     };
 
     componentWillMount() {
-        this.generateHtml(this.props.data.default_language);
+        this.generateHtml(this.props.data.en);
     }
 
     passItemToEdit(id, key_name) {
-        const query = findNestedObjectByID(
-            this.props.data.default_language,
-            'id',
-            id
-        );
+        const item = {
+            values: {}
+        };
+
+        this.props.languages.forEach(lang => {
+            const query = findNestedObjectByID(this.props.data[lang], 'id', id);
+            item.values[lang] = query[key_name];
+        });
+
+        item['id'] = id;
+        item['name'] = key_name;
+
+        // console.log(item.values);
+
         this.setState({
-            editItem: {
-                id,
-                name: key_name,
-                item: query
-            }
+            editItem: item
         });
     }
 
@@ -63,9 +69,17 @@ export class Editor extends Component {
         }
     }
 
+    exportData = () => {
+        const data = JSON.parse(localStorage.getItem('latest_i18n_gui_file'));
+        for (let key in data) {
+            exportToJSON(data[key], `${key}.json`);
+        }
+    };
+
     render() {
         return (
             <EditorWrapper>
+                <button onClick={this.exportData}>Export</button>
                 <GeneratedLinks
                     passItemToEdit={this.passItemToEdit.bind(this)}
                     html={this.html}

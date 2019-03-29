@@ -6,24 +6,23 @@ import Editor from './components/screens/Editor';
 import recursivelyAddIds from './utils/recursivelyAddIds';
 import readSingleFile from './utils/readSingleFile';
 import findNestedObjectByID from './utils/findNestedObjectByID';
-import updateNestedObjectByID from './utils/updateNestedObjectByID';
 
 class App extends Component {
     state = {
         data: null,
         dataLoaded: false,
-        default_language: 'en',
-        selected_languages: ['ar', 'fr']
+        // default_language: 'en',
+        selected_languages: ['en', 'ar', 'fr']
     };
 
     componentWillMount() {
-        const localData = localStorage.getItem('latest_i18n_gui_file');
-        if (localData) {
-            this.setState({
-                data: JSON.parse(localData),
-                dataLoaded: true
-            });
-        }
+        // const localData = localStorage.getItem('latest_i18n_gui_file');
+        // if (localData) {
+        //     this.setState({
+        //         data: JSON.parse(localData),
+        //         dataLoaded: true
+        //     });
+        // }
     }
 
     handleDrop = file => {
@@ -31,9 +30,10 @@ class App extends Component {
             // adding ids
             data = recursivelyAddIds(data);
             // creating a version of the file for each language
-            const duplicated_data = {
-                default_language: data
-            };
+            // const duplicated_data = {
+            //     default_language: data
+            // };
+            const duplicated_data = {};
             this.state.selected_languages.forEach(lang => {
                 duplicated_data[lang] = JSON.parse(JSON.stringify(data));
             });
@@ -42,7 +42,7 @@ class App extends Component {
                 'latest_i18n_gui_file',
                 JSON.stringify(duplicated_data)
             );
-            this.setState({ dataLoaded: true, duplicated_data });
+            this.setState({ dataLoaded: true, data: duplicated_data });
         });
     };
 
@@ -51,35 +51,22 @@ class App extends Component {
         const key = e.target.getAttribute('data-key');
         const lang = e.target.getAttribute('data-lang');
         const newValue = e.target.value;
-        const query = findNestedObjectByID(this.state.data[lang], 'id', id);
-        query[key] = newValue;
 
-        // const x = updateNestedObjectByID(
-        //     this.state.data[lang],
-        //     'id',
-        //     id,
-        //     query
-        // );
-        // console.log(x);
+        if (this.state.data[lang]) {
+            const query = findNestedObjectByID(this.state.data[lang], 'id', id);
+            query[key] = newValue;
 
-        // this.mutateObjectProperty(this.state.data[lang], 'id', id, query);
-
-        // console.log(this.state.data);
-        // console.log(this.state.data[lang]);
-        // console.log({ newValue, id, lang });
+            // update local data
+            const local_data = JSON.parse(
+                localStorage.getItem('latest_i18n_gui_file')
+            );
+            local_data[lang] = this.state.data[lang];
+            localStorage.setItem(
+                'latest_i18n_gui_file',
+                JSON.stringify(local_data)
+            );
+        }
     }
-
-    mutateObjectProperty = (obj, prop, value, newObject) => {
-        obj.constructor === Object &&
-            Object.keys(obj).forEach(key => {
-                console.log(key, prop);
-                if (key === prop) {
-                    obj[key] = value;
-                    console.log('obj[key]', obj[key]);
-                }
-                this.mutateObjectProperty(prop, value, obj[key]);
-            });
-    };
 
     render() {
         return (
@@ -94,8 +81,9 @@ class App extends Component {
                     <Editor
                         data={this.state.data}
                         languages={[
-                            ...this.state.selected_languages,
-                            this.state.default_language
+                            ...this.state.selected_languages
+                            // ,
+                            // this.state.default_language
                         ]}
                         updateItem={this.updateItem.bind(this)}
                     />
