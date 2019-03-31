@@ -24,7 +24,11 @@ export class Editor extends Component {
     };
 
     componentWillMount() {
-        this.generateHtml(this.props.data.en);
+        console.log(this.props);
+        for (let key in this.props.data) {
+            this.generateHtml(this.props.data[key]);
+            break;
+        }
     }
 
     passItemToEdit(id, key_name) {
