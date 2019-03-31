@@ -14,7 +14,7 @@ class App extends Component {
         dataLoaded: true,
         languages_selected: false,
         // default_language: 'en',
-        selected_languages: ['en', 'ar', 'fr']
+        selected_languages: []
     };
 
     componentWillMount() {
@@ -70,6 +70,27 @@ class App extends Component {
         }
     }
 
+    handleLanguageSelect(e, type) {
+        if (type === 'default') {
+            // const values = this.state.selected_languages.length
+            //     ? this.state.selected_languages.shift()
+            //     : [];
+            // console.log(values);
+            // this.setState({
+            //     selected_languages: [e.value, ...values]
+            // });
+        } else {
+            const values = e.map(x => x.value);
+            const default_language = this.state.selected_languages[0];
+            this.setState({
+                selected_languages: [default_language, ...values]
+            });
+        }
+        setTimeout(() => {
+            console.log(this.state.selected_languages);
+        }, 100);
+    }
+
     render() {
         return (
             <div className="App">
@@ -80,7 +101,11 @@ class App extends Component {
                 )}
 
                 {!this.state.languages_selected && this.state.dataLoaded && (
-                    <SelectLanguages />
+                    <SelectLanguages
+                        handleLanguageSelect={this.handleLanguageSelect.bind(
+                            this
+                        )}
+                    />
                 )}
 
                 {this.state.data && (

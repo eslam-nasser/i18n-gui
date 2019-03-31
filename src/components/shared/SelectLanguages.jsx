@@ -12,25 +12,39 @@ const customStyles = {
 };
 
 class SelectLanguages extends Component {
+    state = {
+        default_language_selected: false
+    };
     render() {
         return (
             <div>
                 <h1>Select languages</h1>
                 <div>
                     <h4>What is this file language? </h4>
-                    <Select options={all_languages} styles={customStyles} />
-                </div>
-                <div>
-                    <h4>What languages you want to support? </h4>
                     <Select
                         options={all_languages}
                         styles={customStyles}
-                        isMulti
                         onChange={e => {
-                            console.log(e);
+                            this.props.handleLanguageSelect(e, 'default');
+                            this.setState({
+                                default_language_selected: true
+                            });
                         }}
                     />
                 </div>
+                {this.state.default_language_selected && (
+                    <div>
+                        <h4>What languages you want to support? </h4>
+                        <Select
+                            options={all_languages}
+                            styles={customStyles}
+                            isMulti
+                            onChange={e => {
+                                this.props.handleLanguageSelect(e);
+                            }}
+                        />
+                    </div>
+                )}
             </div>
         );
     }
