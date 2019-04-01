@@ -13,9 +13,12 @@ const GeneratedLinksWrapper = styled.ul`
     }
     .has-subtree {
         position: relative;
-        span:hover {
-            cursor: pointer;
-            text-decoration: underline;
+        span {
+            display: block;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
         }
         &:before {
             content: '+';

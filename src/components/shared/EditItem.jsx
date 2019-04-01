@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const EditItemWrapper = styled.div``;
+const EditItemWrapper = styled.div`
+    .start-hint {
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        opacity: 0.8;
+        padding-left: 20px;
+
+        img {
+            width: 50px;
+        }
+    }
+`;
 
 export class EditItem extends Component {
     state = {};
@@ -38,7 +52,13 @@ export class EditItem extends Component {
                         );
                     })
                 ) : (
-                    <h3>Please select an item</h3>
+                    <div className="start-hint">
+                        <img
+                            src={require('../../assets/icons/arrow.svg')}
+                            alt="Start here"
+                        />
+                        <h3>Select an item to translate it</h3>
+                    </div>
                 )}
             </EditItemWrapper>
         );

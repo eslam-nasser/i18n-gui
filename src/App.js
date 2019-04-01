@@ -13,7 +13,7 @@ class App extends Component {
         data: null,
         is_data_loaded: false,
         is_languages_selected: false,
-        // default_language: 'en',
+        is_download_btn_shown: false,
         selected_languages: []
     };
 
@@ -22,7 +22,8 @@ class App extends Component {
         if (localData) {
             // this.setState({
             //     data: JSON.parse(localData),
-            //     is_data_loaded: true
+            //     is_data_loaded: true,
+            //     is_languages_selected: true
             // });
         }
     }
@@ -56,6 +57,12 @@ class App extends Component {
                 JSON.stringify(local_data)
             );
         }
+
+        if (!this.state.is_download_btn_shown) {
+            this.setState({
+                is_download_btn_shown: true
+            });
+        }
     }
 
     handleLanguageSelect(e, type) {
@@ -78,9 +85,6 @@ class App extends Component {
     start_translating() {
         if (this.state.selected_languages.length >= 2) {
             // creating a version of the file for each language
-            // const duplicated_data = {
-            //     default_language: data
-            // };
             const data = this.state.data;
             const duplicated_data = {};
             this.state.selected_languages.forEach(lang => {
@@ -123,19 +127,31 @@ class App extends Component {
 
                 {this.state.selected_languages.length >= 2 &&
                     !this.state.is_languages_selected && (
-                        <button onClick={this.start_translating.bind(this)}>
-                            Start translating =>
+                        <button
+                            className="btn primary"
+                            onClick={this.start_translating.bind(this)}
+                            style={{
+                                marginTop: 30,
+                                display: 'flex'
+                            }}
+                        >
+                            <span>Start translating</span>
+                            <img
+                                src={require('./assets/icons/right-arrow.svg')}
+                                alt="Next"
+                                style={{
+                                    marginLeft: 10,
+                                    width: 20
+                                }}
+                            />
                         </button>
                     )}
 
                 {this.state.data && this.state.is_languages_selected && (
                     <Editor
                         data={this.state.data}
-                        languages={[
-                            ...this.state.selected_languages
-                            // ,
-                            // this.state.default_language
-                        ]}
+                        is_download_btn_shown={this.state.is_download_btn_shown}
+                        languages={[...this.state.selected_languages]}
                         updateItem={this.updateItem.bind(this)}
                     />
                 )}

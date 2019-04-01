@@ -8,8 +8,40 @@ import exportToJSON from '../../utils/exportToJson';
 
 const EditorWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    button {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        img {
+            width: 25px;
+            margin-left: 20px;
+        }
+        span {
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            opacity: 0.8;
+        }
+    }
     > ul {
         flex: 1;
+        padding: 0;
+        > li {
+            padding: 10px !important;
+            padding-left: 5px;
+        }
+        li {
+            transition: 0.15s;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.02);
+            }
+        }
     }
     > div {
         flex: 2;
@@ -37,16 +69,12 @@ export class Editor extends Component {
         };
 
         this.props.languages.forEach(lang => {
-            console.log(lang, this.props.data, this.props.data[lang]);
             const query = findNestedObjectByID(this.props.data[lang], 'id', id);
-            console.log(query);
             item.values[lang] = query[key_name];
         });
 
         item['id'] = id;
         item['name'] = key_name;
-
-        console.log(item);
 
         this.setState({
             editItem: item
@@ -85,7 +113,19 @@ export class Editor extends Component {
     render() {
         return (
             <EditorWrapper>
-                <button onClick={this.exportData}>Export</button>
+                <button
+                    disabled={!this.props.is_download_btn_shown}
+                    className="btn primary"
+                    onClick={this.exportData}
+                >
+                    Export your translations as JSON files
+                    <img
+                        src={require('../../assets/icons/download.svg')}
+                        alt="Download"
+                    />
+                    <span>{this.props.languages.length + ' file(s)'}</span>
+                </button>
+
                 <GeneratedLinks
                     passItemToEdit={this.passItemToEdit.bind(this)}
                     html={this.html}
