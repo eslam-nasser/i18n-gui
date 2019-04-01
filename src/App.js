@@ -11,8 +11,8 @@ import SelectLanguages from './components/shared/SelectLanguages';
 class App extends Component {
     state = {
         data: null,
-        is_data_loaded: true,
-        is_languages_selected: true,
+        is_data_loaded: false,
+        is_languages_selected: false,
         // default_language: 'en',
         selected_languages: []
     };
@@ -20,10 +20,10 @@ class App extends Component {
     componentWillMount() {
         const localData = localStorage.getItem('latest_i18n_gui_file');
         if (localData) {
-            this.setState({
-                data: JSON.parse(localData),
-                is_data_loaded: true
-            });
+            // this.setState({
+            //     data: JSON.parse(localData),
+            //     is_data_loaded: true
+            // });
         }
     }
 
@@ -91,7 +91,7 @@ class App extends Component {
                 'latest_i18n_gui_file',
                 JSON.stringify(duplicated_data)
             );
-            this.setState({ data });
+            this.setState({ data: duplicated_data });
 
             this.setState({
                 is_languages_selected: true

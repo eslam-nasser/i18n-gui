@@ -24,7 +24,7 @@ export class Editor extends Component {
     };
 
     componentWillMount() {
-        console.log(this.props);
+        // console.log(this.props);
         for (let key in this.props.data) {
             this.generateHtml(this.props.data[key]);
             break;
@@ -37,14 +37,16 @@ export class Editor extends Component {
         };
 
         this.props.languages.forEach(lang => {
+            console.log(lang, this.props.data, this.props.data[lang]);
             const query = findNestedObjectByID(this.props.data[lang], 'id', id);
+            console.log(query);
             item.values[lang] = query[key_name];
         });
 
         item['id'] = id;
         item['name'] = key_name;
 
-        // console.log(item.values);
+        console.log(item);
 
         this.setState({
             editItem: item
