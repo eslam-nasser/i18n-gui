@@ -7,6 +7,21 @@ import exportToJSON from '../../utils/exportToJson';
 // import updateNestedObjectByID from '../../utils/updateNestedObjectByID';
 
 const EditorWrapper = styled.div`
+textarea {
+    padding: 10px;
+    border-radius: 5px;
+    background: #26222f;
+    border: none;
+    color: #c2c2c2;
+    transition: 0.15s;
+    outline: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  }
+  textarea:hover{
+      background:#f1f2f6;
+      color: #000
+  }
     display: flex;
     flex-wrap: wrap;
     button {
@@ -26,6 +41,7 @@ const EditorWrapper = styled.div`
             transform: translateX(-50%);
             font-size: 10px;
             opacity: 0.8;
+            
         }
     }
     > ul {
@@ -34,13 +50,17 @@ const EditorWrapper = styled.div`
         > li {
             padding: 10px !important;
             padding-left: 5px;
+            color: #c2c2c2;
+            width: 80%;
         }
         li {
             transition: 0.15s;
             &:hover {
                 cursor: pointer;
-                background-color: rgba(255, 255, 255, 0.02);
+                background-color: rgb(236, 204, 104);
+                color: rgb(47, 53, 66); 
             }
+        .single-item:hover{background: #ecd281;transition: 0.15s;}
         }
     }
     > div {
