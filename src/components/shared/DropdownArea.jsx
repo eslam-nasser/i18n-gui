@@ -112,7 +112,7 @@ export class DropdownArea extends Component {
                     src={require('../../assets/icons/upload.svg')}
                     alt="add icon"
                 />
-                <h3>Drag and drop your i18n json file</h3>
+                <h3>Drop your i18n json file here</h3>
             </Dropdown>
         );
     }

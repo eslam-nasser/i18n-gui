@@ -129,10 +129,6 @@ class App extends Component {
             <div className="App">
                 <Nav />
 
-                {/* <pre>
-                    {JSON.stringify(this.state.selected_languages, null, 2)}
-                </pre> */}
-
                 {!this.state.is_data_loaded && (
                     <DropdownArea handleDrop={this.handleDrop} />
                 )}
