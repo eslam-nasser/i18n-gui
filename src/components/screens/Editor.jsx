@@ -24,27 +24,30 @@ const EditorWrapper = styled.div`
         &:focus,
         &:hover {
             background: #26222f;
-            /* background: #f1f2f6;
-            color: #000; */
         }
     }
-    button {
+    .actions {
         flex-basis: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        img {
-            width: 25px;
-            margin-left: 20px;
-        }
-        span {
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 10px;
-            opacity: 0.8;
+        justify-content: space-between;
+        button {
+            flex-basis: 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img {
+                width: 25px;
+                margin-left: 20px;
+            }
+            span {
+                position: absolute;
+                bottom: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 10px;
+                opacity: 0.8;
+            }
         }
     }
     > ul {
@@ -125,7 +128,7 @@ export class Editor extends Component {
     }
 
     exportData = () => {
-        const data = JSON.parse(localStorage.getItem('i18n_gui_file'));
+        const data = JSON.parse(localStorage.getItem('i18n_gui_file_data'));
         for (let key in data) {
             exportToJSON(data[key], `${key}.json`);
         }
@@ -134,18 +137,26 @@ export class Editor extends Component {
     render() {
         return (
             <EditorWrapper>
-                <button
-                    // disabled={!this.props.is_download_btn_shown}
-                    className="btn primary"
-                    onClick={this.exportData}
-                >
-                    Export your translations as JSON files
-                    <img
-                        src={require('../../assets/icons/download.svg')}
-                        alt="Download"
-                    />
-                    <span>{this.props.languages.length + ' file(s)'}</span>
-                </button>
+                <div className="actions">
+                    <button className="btn primary" onClick={this.exportData}>
+                        Export your translations as JSON files
+                        <img
+                            src={require('../../assets/icons/download.svg')}
+                            alt="Download"
+                        />
+                        <span>{this.props.languages.length + ' file(s)'}</span>
+                    </button>
+                    <button
+                        className="btn primary"
+                        onClick={this.props.startOver}
+                    >
+                        Import new i18n file
+                        <img
+                            src={require('../../assets/icons/upload.svg')}
+                            alt="Download"
+                        />
+                    </button>
+                </div>
 
                 <GeneratedLinks
                     passItemToEdit={this.passItemToEdit.bind(this)}

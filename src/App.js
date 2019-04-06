@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './assets/css/style.css';
 import { Nav, DropdownArea } from './components/shared';
 import Editor from './components/screens/Editor';
-import recursivelyAddIds from './utils/recursivelyAddIds';
+import { recursivelyAddIds } from './utils/recursivelyHandleIds';
 import readSingleFile from './utils/readSingleFile';
 import findNestedObjectByID from './utils/findNestedObjectByID';
 import SelectLanguages from './components/shared/SelectLanguages';
@@ -111,6 +111,19 @@ class App extends Component {
         }
     }
 
+    startOver() {
+        // wipe everything
+        localStorage.removeItem('i18n_gui_file_data');
+        localStorage.removeItem('i18n_gui_selected_languages');
+        this.setState({
+            data: null,
+            is_data_loaded: false,
+            is_languages_selected: false,
+            is_download_btn_shown: false,
+            selected_languages: []
+        });
+    }
+
     render() {
         return (
             <div className="App">
@@ -161,6 +174,7 @@ class App extends Component {
                         is_download_btn_shown={this.state.is_download_btn_shown}
                         languages={[...this.state.selected_languages]}
                         updateItem={this.updateItem.bind(this)}
+                        startOver={this.startOver.bind(this)}
                     />
                 )}
             </div>

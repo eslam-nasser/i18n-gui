@@ -6,6 +6,10 @@ const GeneratedLinksWrapper = styled.ul`
     user-select: none;
     li {
         padding: 5px 10px;
+        &.selected {
+            font-weight: bold;
+            color: #fff;
+        }
     }
     > .has-subtree {
         list-style-type: none;
@@ -56,10 +60,17 @@ export class GeneratedLinks extends Component {
         if (e.target.localName === 'span') {
             if (e.target.parentNode && e.target.parentNode.parentNode) {
                 const parentUL = e.target.parentNode.parentNode;
+                const parentLI = e.target.parentNode;
                 const id = parentUL.getAttribute('data-item-id');
                 const key_name = e.target.innerText;
-                // e.target.classList.toggle('selected');
                 this.props.passItemToEdit(id, key_name);
+
+                // toggle active class
+                const activeLI = document.querySelector('li.selected');
+                if (activeLI) {
+                    activeLI.classList.remove('selected');
+                }
+                parentLI.classList.toggle('selected');
             }
         }
     };

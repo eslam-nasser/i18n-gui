@@ -1,12 +1,12 @@
+import { recursivelyRemoveIds } from './recursivelyHandleIds';
+
 function exportToJSON(objectData, filename = 'export.json') {
     let contentType = 'application/json;charset=utf-8;';
+    let cleanData = recursivelyRemoveIds(objectData);
+
     if (window.navigator && window.navigator.msSaveOrOpenBlob) {
         var blob = new Blob(
-            [
-                decodeURIComponent(
-                    encodeURI(JSON.stringify(objectData, null, 2))
-                )
-            ],
+            [decodeURIComponent(encodeURI(JSON.stringify(cleanData, null, 2)))],
             { type: contentType }
         );
         navigator.msSaveOrOpenBlob(blob, filename);
@@ -17,7 +17,7 @@ function exportToJSON(objectData, filename = 'export.json') {
             'data:' +
             contentType +
             ',' +
-            encodeURIComponent(JSON.stringify(objectData, null, 2));
+            encodeURIComponent(JSON.stringify(cleanData, null, 2));
         a.target = '_blank';
         document.body.appendChild(a);
         a.click();
