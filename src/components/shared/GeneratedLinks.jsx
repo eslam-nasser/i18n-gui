@@ -58,6 +58,7 @@ export class GeneratedLinks extends Component {
                 const parentUL = e.target.parentNode.parentNode;
                 const id = parentUL.getAttribute('data-item-id');
                 const key_name = e.target.innerText;
+                // e.target.classList.toggle('selected');
                 this.props.passItemToEdit(id, key_name);
             }
         }

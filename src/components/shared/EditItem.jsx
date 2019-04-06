@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import languages from '../../utils/all_languages';
 
 const EditItemWrapper = styled.div`
     .start-hint {
@@ -10,7 +11,6 @@ const EditItemWrapper = styled.div`
         flex-direction: column;
         opacity: 0.8;
         padding-left: 20px;
-
         img {
             width: 50px;
         }
@@ -37,10 +37,15 @@ export class EditItem extends Component {
                     inputs.map((input, i) => {
                         return (
                             <div key={i}>
-                                <h4>{input.language}</h4>
+                                <h4>
+                                    {languages.languages_as_object[
+                                        input.language
+                                    ] &&
+                                        languages.languages_as_object[
+                                            input.language
+                                        ].label}
+                                </h4>
                                 <textarea
-                                    // ref={userInput => (this.input = userInput)}
-                                    // value={input.value}
                                     defaultValue={input.value}
                                     key={Math.random() * 1000}
                                     data-lang={input.language}

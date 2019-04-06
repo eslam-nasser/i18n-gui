@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import Select from 'react-select';
-import all_languages from '../../utils/all_languages';
+import languages from '../../utils/all_languages';
 
 const customStyles = {
     option: (provided, state) => ({
@@ -22,7 +22,7 @@ class SelectLanguages extends Component {
                 <div>
                     <h4>What is this file language? </h4>
                     <Select
-                        options={all_languages}
+                        options={languages.languages_as_array}
                         styles={customStyles}
                         onChange={e => {
                             this.props.handleLanguageSelect(e, 'default');
@@ -36,7 +36,7 @@ class SelectLanguages extends Component {
                     <div>
                         <h4>What languages you want to support? </h4>
                         <Select
-                            options={all_languages}
+                            options={languages.languages_as_array}
                             styles={customStyles}
                             isMulti
                             onChange={e => {
