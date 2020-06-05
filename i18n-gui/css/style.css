@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    height: 4000px;
+}
+
+/* nav */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    z-index: 9999;
+    padding: 0 200px
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    border-bottom: 1px solid #fff;
+    
+  }
+/* nav */
+.hero-section{
+    position: relative;
+    background: #100e17;
+    height: 100vh;
+    
+}
+.overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+    /* background-image: url('https://vjloopsfarm.com/wp-content/uploads/2017/02/Polygon-Strukt_1280x720_30fps_VJLoop_LIMEART_003.jpg'); */
+    background-image: url('https://wallpaperplay.com/walls/full/b/2/6/121517.jpg');
+    opacity: 0.2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+.head{
+    padding-top: 100px;
+
+}
+
+.head h1{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 80; 
+    color: #fff
+}
+
+.head h1::before{
+    content: "";
+    background-image: url(https://dl2.macupdate.com/images/icons256/45881.png?d=1550737845);
+    background-size: cover;
+    width: 58px;
+    height: 58px;
+    margin-right: 29px;
+}
+
+.drag{
+    border: 2px dashed #fff;
+    margin: 0 200px;
+    padding: 200px 0
+}
+.drag img{
+    width: 70px;
+    display: block;
+    margin: auto
+}
+.drag p{
+    color: #fff;
+    text-align: center
+}
+
+  #scroll-down a span {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50% );
+    width: 25px;
+    height: 50px;
+    margin-left: -15px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+  }
+  #scroll-down a span::before {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    /* transform: translate(-50% ); */
+    background-color: #fff;
+    border-radius: 100%;
+    animation: sdn 2s infinite;
+  }
+  @-webkit-keyframes sdn {
+    0% {
+      -webkit-transform: translate(0, 0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      -webkit-transform: translate(0, 20px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
